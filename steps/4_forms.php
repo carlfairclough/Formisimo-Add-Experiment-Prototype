@@ -10,7 +10,6 @@
 //CHECKING FOR URLS FOR DIFFERENT SCENARIOS
 
 $q = strtolower($_SERVER['QUERY_STRING']);
-print_r($user1);
 
 if ( array_search($q, array_map('strtolower', $user1 ) ) ) { 
 	$user = $user1;
@@ -42,18 +41,29 @@ if ( array_search($q, array_map('strtolower', $user1 ) ) ) {
 } else {
 	echo 'NOPE';
 };
-?>
 
+
+$h1msg = 'High five! We found the code';
+
+if ($user["forms"] == null ) {
+	$h1msg = 'High five! We found the code';
+}
+
+if ($user["code"] == false ) {
+	$h1msg = "Uh oh, we couldn't find the code at that URL";
+}
+
+
+?>
 
 <div class="row">
 	<div class="col-12">
-		<h1>High five! We found the code</h1>
-		<p class="small"><?php echo $q; ?>
+		<h1><?php echo $h1msg; ?></h1>
 		<p>Configure your last settings and we'll be ready to collect your data.</p>
 	</div>
 </div>
 <div class="row">
-	<div class="col-8 form-table-wrapper">
+	<div class="col-8 form-table-wrapper pr30">
 		<?php include('../modules/formtable.php'); ?>
 	</div>
 	<div class="col-4">

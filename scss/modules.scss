@@ -105,25 +105,45 @@
 	}
 }
 
-.form-table {
-	@include border(4px, #CFCFCF, 1px);
-	margin-bottom:45px;
+.form-table-wrapper, .url-rules {
+	margin-top:120px;
+}
+
+
+.form-table,
+.url-rules,
+.manual-form {
+  @include border(4px, #CFCFCF, 1px);
+  margin-bottom:45px;
 
 	h2 {
 		font-size:18px;
 		text-align: left;
 		line-height:60px;
-
-		a {
-			float:right;
-		}
+    a {
+      float:right;
+    }
 	}
+}
+
+.form-table {
+
+}
+
+.url-rules {
+	
+}
+
+.title-row {
+	border-bottom:1px solid #CFCFCF;
+}
+
+.form-table {
 
 	.table-head {
 		background:#ebebeb;
 
 		.td {
-			border-top:1px solid #cfcfcf;
 			border-right:1px solid #CFCFCF;
 			border-bottom:1px solid #CFCFCF;
 
@@ -137,6 +157,11 @@
 		.td {
 			height:71px;
 			border-bottom: 1px solid #CFCFCF;
+			line-height: 70px;
+
+			&.id-cell {
+				font-weight:500;
+			}
 		}
 
 		&:last-child {
@@ -171,12 +196,14 @@
 	padding-right:15px;
 }
 
+fieldset, form {
+	width:100%;
+}
 
-input {
+
+input[type="text"] {
 	font-family: 'franklin-gothic-urw';
 	font-weight:400;
-	margin:0;
-	padding:0;
 	line-height: 48px;
 	font-size:18px;
 	width:100%;
@@ -188,6 +215,54 @@ input {
 		box-shadow:0 0 0 1px #00aeef;
 		border-color:#00aeef;
 	}
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label .fakeBox {
+    display:inline-block;
+    width:22px;
+    height:22px;
+    margin:0;
+    background:#fff;
+    cursor:pointer;
+    position: relative;
+    transition:0.75s ease-in-out;
+    @include border(50%, #747080, 2px );
+
+    &:disabled {
+
+    }
+
+    &:after {
+   		content:'';
+   		position:absolute;
+   		left:7px;
+   		right:7px;
+   		top:7px;
+   		bottom:7px;
+   		background:#FFF;
+   		@include border(50%,none,none);
+   		transition:0.25s ease-in-out;
+   	}
+    
+}
+
+input[type="radio"]:checked + label .fakeBox {
+   	@include border(50%, #00aeef, 2px );
+
+   	&:after {
+   		content:'';
+   		position:absolute;
+   		left:2px;
+   		right:2px;
+   		top:2px;
+   		bottom:2px;
+   		background:#747080;
+   		@include border(50%,none,none);
+   	}
 }
 
 

@@ -50,7 +50,11 @@ $(document).ready(function(){
 
 		window.setTimeout(function (){
 			var url = $('input').val();
-			window.location.href='4_forms.php?'+url;
+			if (url == 'google.com3') {
+				window.location.href="3_url.php?"+url;
+			} else {
+				window.location.href='4_forms.php?'+url;
+			}
 		}, 5000);
 	});
 	
