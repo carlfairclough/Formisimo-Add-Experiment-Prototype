@@ -1,0 +1,15 @@
+.bottom-notification {
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	background:#00aeef;
+
+	p,a {
+		color:#FFF;
+		font-size:16px;
+		line-height: 63px;
+		margin:0;
+		padding:0;
+	}
+}

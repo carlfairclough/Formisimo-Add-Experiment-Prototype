@@ -1,0 +1,153 @@
+/* ===============================================
+
+BREAKPOINTS
+--------------------------------------------------
+Make sure that these are in the same order!
+Media Queries run in a -desktop first- order
+
+================================================*/
+
+$screen-size-names: u1240, 	u1030, 	u768, 	u481;
+$screen-sizes: 		1240px, 1030px, 768px, 	481px;
+
+
+
+
+/* ===============================================
+
+GRID SETTINGS
+--------------------------------------------------
+Change these to your hearts content. Set your
+max-width, column count and gutter width.
+
+================================================*/
+
+$grid-max-width: 1140px;
+$grid-columns: 12;
+$grid-gutter-width: 20px; //expressed as a percentage
+$grid-column-width: (100% / ($grid-columns));
+
+
+
+
+/* ===============================================
+
+GENERATE COLUMNS
+--------------------------------------------------
+The fancy bit
+
+================================================*/
+
+
+
+
+// First we define the row width, using $grid-max-width
+
+section {
+	overflow: hidden;
+	display: block;
+}
+
+.row {
+	display:block;
+	margin:0 auto;
+	max-width: $grid-max-width;
+	overflow: visible;
+}
+
+// Add a margin to both sides of the columns, by dividing the gutter by two
+
+[class*="col-"] {
+	float: left;
+	position:relative;
+	padding: 0 10px;
+
+	& > .row {
+		margin-left:-10px;
+		margin-right:-10px;
+	}
+
+	&.no-padding {
+	  padding: 0;
+
+	  	& > .row {
+	  		margin-left:0;
+	  		margin-right:0;
+	  	}
+	}
+}
+
+
+
+
+
+// Create the standard global column classes
+// .col-{number}
+
+@for $i from 1 through $grid-columns {
+	.col-#{$i} {
+		width: ($i * $grid-column-width);
+	}
+
+	.push-#{$i} {
+		margin-left: ($i * $grid-column-width);
+	}
+}
+
+
+
+// Finally, create column classes for each breakpoint with the breakpoint-name prefix
+// .{breakpoint name}-col-{number}
+
+@for $i from 1 through length($screen-size-names) {
+
+	@media screen and (max-width: (nth($screen-sizes, $i))) {
+	    .#{nth($screen-size-names, $i)} {
+	        @for $i from 1 through $grid-columns {
+				&-col-#{$i} {
+					width: ($i * $grid-column-width);
+				}
+
+				&-push-#{$i} {
+					margin-left: ($i * $grid-column-width);
+				}
+			}
+	    }
+	}
+}
+
+//modifiers
+.hide {
+	display:none;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+.centered {
+	float:none;
+	margin:0 auto;
+}
+
+
+[class*="col-"] {
+
+	&.left {
+		float:left;
+	}
+
+	&.right {
+		float:right;
+	}
+
+	&.centered {
+		float:none;
+		margin:0 auto;
+	}
+
+}

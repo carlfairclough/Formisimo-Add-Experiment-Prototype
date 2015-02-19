@@ -1,0 +1,36 @@
+.button {
+	cursor:pointer;
+	line-height:40px;
+	display:inline-block;
+	overflow:hidden;
+	height:auto;
+	width:auto;
+	text-decoration: none;
+	font-weight:500;
+	font-size:18px;
+	padding-left:25px;
+	padding-right:25px;
+	@include border(4px, transparent, 0px);
+
+	&.blue {	
+		background:#00aeef;
+		color:#FFF;
+	}
+
+	&.centered {
+		text-align: center;
+	}
+
+	transition: color 0.3s ease-in-out;
+}
+
+.secondary {
+	line-height: 40px;
+	font-size:14px;
+	color:#585368;
+	text-decoration: underline;
+}
+
+.hideText {
+	color:transparent!important;
+}
