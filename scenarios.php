@@ -1,7 +1,7 @@
 <?php
 
 $user1 = array(
-    "url" => "google.com1",
+    "url" => "google.com",
     "code" => true,
     "forms" => array(
     	array(

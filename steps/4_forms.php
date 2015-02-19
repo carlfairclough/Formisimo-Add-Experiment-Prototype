@@ -3,14 +3,52 @@
 
 <!-- <pre><?php print_r($user1); ?></pre> -->
 
-<?php $user = $user1; 
-global $user;
+
+
+<?php
+
+//CHECKING FOR URLS FOR DIFFERENT SCENARIOS
+
+$q = strtolower($_SERVER['QUERY_STRING']);
+print_r($user1);
+
+if ( array_search($q, array_map('strtolower', $user1 ) ) ) { 
+	$user = $user1;
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user2 ) ) ) {
+	$user = $user2; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user3 ) ) ) {
+	$user = $user3; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user4 ) ) ) {
+	$user = $user4; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user5 ) ) ) {
+	$user = $user5; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user6 ) ) ) {
+	$user = $user6; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user7 ) ) ) {
+	$user = $user7; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user8 ) ) ) {
+	$user = $user8; 
+	global $user;
+} else if ( array_search($q, array_map('strtolower', $user9 ) ) ) {
+	$user = $user9; 
+	global $user;
+} else {
+	echo 'NOPE';
+};
 ?>
 
 
 <div class="row">
 	<div class="col-12">
 		<h1>High five! We found the code</h1>
+		<p class="small"><?php echo $q; ?>
 		<p>Configure your last settings and we'll be ready to collect your data.</p>
 	</div>
 </div>

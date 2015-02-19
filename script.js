@@ -47,6 +47,11 @@ $(document).ready(function(){
 			$('.content').prepend('<div class="spinner-wrap" style="position:absolute; top:'+hO+'px;"></div>');
 			$('.spinner-wrap').css({'opacity' : 0}).load('/modules/spinner.php').animate({'opacity' : 1}, 500);
 		}, 1500);
+
+		window.setTimeout(function (){
+			var url = $('input').val();
+			window.location.href='4_forms.php?'+url;
+		}, 5000);
 	});
 	
 
