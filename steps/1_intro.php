@@ -32,7 +32,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<a class="button blue centered go-to-code">Get started now</a>
+							<div class="text-center"><a class="button blue centered go-to-code">Get started now</a></div>
 						</div>
 					</div>
 				</div>

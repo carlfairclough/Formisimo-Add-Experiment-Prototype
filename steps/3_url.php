@@ -40,7 +40,7 @@ if ( array_search($q, array_map('strtolower', $user1 ) ) ) {
 
 if ( $q != null && $user["code"] == false ) {
 	$h1msg = 'Uh Oh! Code not found';
-	$pmsg = 'We couldn&#39;t find the code at the URL specified. If you&#39;re absolutely sure that it&#39;s there, then <a href=""> set up the experiment anyway</a>';
+	$pmsg = 'We couldn&#39;t find the code at the URL specified. If you&#39;re absolutely sure that it&#39;s there, then <a href="/steps/4_forms.php?'.$q.'" class="block"> set up the experiment anyway</a>';
 }
 
 
@@ -53,19 +53,22 @@ if ( $q != null && $user["code"] == false ) {
 			<div class="col-8 centered">
 				<div class="row">
 					<div class="col-4">
-						<div class="illusSmall">
+						<div class="illustration animated fadeIn small-illus mb100 left animated">
 						</div>
 					</div>
 					<div class="col-4">
-						<div class="illusSmall">
+						<div class="illustration main-illus animated fadeInDown small-illus mb100">
 						</div>
 					</div>
 					<div class="col-4">
-						<div class="illusSmall">
+						<div class="illustration animated fadeIn small-illus mb100 right">
 						</div>
 					</div>
 				</div>
-
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8 centered">
 				<h1><?php echo $h1msg; ?></h1>
 				<p><?php echo $pmsg; ?></p>
 

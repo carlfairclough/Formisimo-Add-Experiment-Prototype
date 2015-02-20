@@ -1,0 +1,1 @@
+<?php header("Location: steps/1_intro.php"); ?>

@@ -18,6 +18,9 @@
   transition: $args;
 }
 
+.cf {
+  clear:both;
+}
 
 .mb5  {margin-bottom:5px}
 .mb10 {margin-bottom:10px}
@@ -25,6 +28,7 @@
 .mb20 {margin-bottom:20px}
 .mb25 {margin-bottom:25px}
 .mb30 {margin-bottom:30px}
+.mb100 {margin-bottom: 100px}
 
 .mt5  {margin-top:5px}
 .mt10 {margin-top:10px}
@@ -75,7 +79,15 @@
 .pr25 {padding-right:25px}
 .pr30 {padding-right:30px}
 
-.step1-illus, .step2-illus, .step3-illus {
+.text-center {
+  text-align: center;
+}
+
+.block {
+  display:block;
+}
+
+.illustration {
 	border-radius:51px;
 	background:#585368;
 	width:102px;
@@ -83,6 +95,18 @@
 	display:block;
 	margin:0 auto;
 	margin-top:70px;
+
+  &.small-illus {
+    width:40px;
+    height:40px;
+    background: #E4E3E7;
+
+    &.main-illus {
+      width:50px;
+      height:50px;
+      background: #585368
+    }
+  }
 
 	& + h2 {
 		text-align: center;
@@ -109,6 +133,9 @@
 	margin-top:120px;
 }
 
+.relative {
+  position: relative;
+}
 
 .form-table,
 .url-rules,
@@ -124,14 +151,70 @@
       float:right;
     }
 	}
+
+
+  button {
+    position:absolute;
+    right:5px;
+    bottom:5px;
+  }
+}
+
+input {
+  &[readonly] {
+    & + button {
+      background:transparent!important;
+      color:#878999!important;
+      text-decoration: underline;
+    }
+  }
 }
 
 .form-table {
+  .tr.form-input {
 
+    .form-input-wrap {
+      opacity:0;
+      transition: all 0.2s ease-in-out;
+      overflow: visible;
+    }
+
+    .form-input-show.td {
+      height: 140px;
+
+      .form-input-wrap {
+        opacity: 1;
+      }
+
+    }
+    input {
+      bottom: 1px;
+      position: absolute;
+      left: 1px;
+      right: 1px;
+      width: 99.7%;
+
+      & + button {
+        top: 5px;
+      }
+    }
+  }
+}
+
+.form-input-wrap {
+  position: absolute;
+  bottom: 78px;
+  left: 120px;
+  right: 70px;
+  overflow: hidden;
+  padding: 0;
+  height: 54px;
 }
 
 .url-rules {
-	
+	 .fakeBox {
+    vertical-align: bottom;
+  }
 }
 
 .title-row {
@@ -212,9 +295,21 @@ input[type="text"] {
 	@include transition(all 0.25s ease-in-out);
 
 	&:focus {
+    outline:none;
 		box-shadow:0 0 0 1px #00aeef;
 		border-color:#00aeef;
 	}
+
+  &.inactive, &[readonly] {
+    background:#F2F2F2;
+    box-shadow:0 0 0 1px white;
+    @include border(4px, #cfcfcf, 1px);
+  }
+
+  &.error {
+    box-shadow:0 0 0 1px red;
+    @include border(4px, red, 1px);
+  }
 }
 
 input[type="radio"] {
@@ -229,6 +324,7 @@ input[type="radio"] + label .fakeBox {
     background:#fff;
     cursor:pointer;
     position: relative;
+    vertical-align: middle;
     transition:0.75s ease-in-out;
     @include border(50%, #747080, 2px );
 
