@@ -130,18 +130,24 @@
 }
 
 .form-table-wrapper, .url-rules {
-	margin-top:120px;
+}
+
+.formandurl {
+  border-bottom: 1px solid #CFCFCF;
 }
 
 .relative {
   position: relative;
 }
 
+.add-another-rule {
+  transition:all 0.25s ease-in-out;
+}
+
 .form-table,
 .url-rules,
 .manual-form {
   @include border(4px, #CFCFCF, 1px);
-  margin-bottom:45px;
 
 	h2 {
 		font-size:18px;
@@ -360,6 +366,15 @@ input[type="radio"]:checked + label .fakeBox {
    		@include border(50%,none,none);
    	}
 }
+
+input[value="custom-rules"] + label + div {
+  display:none;
+}
+
+input[value="custom-rules"]:checked + label + div {
+  display:block;
+}
+
 
 
 .spinner-wrap {

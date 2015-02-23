@@ -19,9 +19,9 @@ if ( $user["forms"] == null ) { ?>
 	</div>
 
 <?php 
-} else {
-	foreach($user["forms"] as $index => $form ) { ?>
-		<div class="form-table <?php if ($index != 0) { ?>hide<?php } else { ?> visible <?php } ?>">
+} else { ?>
+		<form>
+		<div class="form-table mb30">
 			<div class="title-row pr20 pl20">
 				<h2>Which form would you like to track? <a href="#" class="scan-again">Scan again</a></h2>
 			</div>
@@ -45,10 +45,10 @@ if ( $user["forms"] == null ) { ?>
 							<label for="radio-choice-<?php echo $n; ?>"><span class="fakeBox"></span></label>
 						</div>
 						<div class="td id-cell">
-							<?php echo $form["name"]; ?>
+							<?php if (!$form["name"]) {echo '<span style="color:red">No form name</span>';} else { echo $form["name"]; } ?>
 						</div>
 						<div class="td">
-							<?php echo $form["ID"]; ?>
+							<?php if (!$form["ID"]) {echo '<span style="color:red">No form ID</span>';} else { echo $form["ID"]; } ?>
 						</div>
 						<div class="td">
 							<?php echo $form["elements"]; ?>
@@ -71,13 +71,13 @@ if ( $user["forms"] == null ) { ?>
 						
 					</div>
 					<div class="td form-input">
-						
-					</div>
+					
+mai						</div>
 				</div>
 			</div>
 		</div>
+		</form>
 <?php 
-	}; 
 }; 
 
 ?>
@@ -87,7 +87,7 @@ if ( $user["forms"] == null ) { ?>
 		<h2>Define a form that you would like to track <a href="#">Scan again</a></h2>
 	</div>
 	<div class="relative ml20 mr20 mb30 mt30">
-		<label>Form name <i class="info">info</a></label>
+		<label>Form name or ID <i class="info">info</a></label>
 		<input type="text" placeholder="Form name" class="pl20 pr20 mt10 form-name-field"></input><button class="button blue form-name-save">Save</button>
 	</div>
 </div>

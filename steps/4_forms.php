@@ -59,7 +59,7 @@ if ($user["code"] == false ) {
 
 ?>
 
-<body>
+<body style="padding-bottom:100px">
 	<div class="content animated fadeIn">
 		<div class="row">
 			<div class="col-8 centered">
@@ -86,12 +86,18 @@ if ($user["code"] == false ) {
 				<p><?php echo $pmsg; ?></p>
 			</div>
 		</div>
-		<div class="row mb30">
-			<div class="col-8 form-table-wrapper pr30 mb30 animated fadeIn">
+		<div class="row formandurl mb30 pt30 pb30">
+			<div class="col-8 form-table-wrapper pr30 animated fadeIn">
 				<?php include('../modules/formtable.php'); ?>
 			</div>
 			<div class="col-4 url-rules-wrapper animated fadeIn">
 				<?php include('../modules/urlrules.php'); ?>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<a href="#" class="button blue right">Finish</a><a href="/steps/3_url.php?<?php echo $q; ?>" class="button grey right mr15">Go back</a>
 			</div>
 		</div>
 
