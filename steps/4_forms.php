@@ -83,6 +83,7 @@ if ($user["code"] == false ) {
 		<div class="row">
 			<div class="col-12">
 				<h1><?php echo $h1msg; ?></h1>
+				<pre class="mb20 green-text"><?php echo $q; ?></pre>
 				<p><?php echo $pmsg; ?></p>
 			</div>
 		</div>

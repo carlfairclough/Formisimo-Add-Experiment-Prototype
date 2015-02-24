@@ -398,7 +398,11 @@ h1 {
   margin-bottom: 20px;
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 0.5s; }
-  h1 + p {
+  h1 + pre {
+    text-align: center;
+    margin: 0 auto;
+    display: block; }
+  h1 + p, h1 + pre + p {
     text-align: center;
     max-width: 400px;
     margin: 0 auto;
@@ -416,6 +420,12 @@ pre {
   font-family: 'consolas';
   margin: 0 auto;
   display: inline-block; }
+
+.green-text {
+  color: green; }
+
+.red-text {
+  color: red; }
 
 .wbg {
   background: #FFF; }
