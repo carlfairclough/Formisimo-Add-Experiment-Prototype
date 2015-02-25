@@ -101,13 +101,5 @@ if ($user["code"] == false ) {
 				<a href="#" class="button blue right">Finish</a><a href="/steps/3_url.php?<?php echo $q; ?>" class="button grey right mr15">Go back</a>
 			</div>
 		</div>
-
-		<div class="bottom-notification">
-			<div class="row">
-				<div class="col-12">
-					<p>Is there another form in the process? <a href="#" class="add-another-form">+ Add another form</a></p>
-				</div>
-			</div>
-		</div>
 	</div>
 </body>
