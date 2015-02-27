@@ -824,6 +824,15 @@ input[value="custom-rules"] + label + div {
 input[value="custom-rules"]:checked + label + div {
   display: block; }
 
+.loading-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 360px;
+  text-align: center;
+  color: #8B8A96;
+  font-style: italic; }
+
 .spinner-wrap {
   left: 0;
   right: 0;
@@ -3099,5 +3108,3 @@ Copyright (c) 2014 Daniel Eden
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
-
-/*# sourceMappingURL=style.css.map */

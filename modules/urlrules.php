@@ -3,9 +3,7 @@
 		<h2>Where do you want to track this</h2>
 	</div>
 	<div class="eg-url pl20 pr20 mt20">
-		<pre style="font-size:14px; color:#CFCFCF"><span class="q-string"><span class="specific-url green-text"><span class="domain-section">example.com</span>/your-page?query-string/</span></span></pre>
-		<pre style="font-size:14px; color:#CFCFCF"><span class="q-string"><span class="specific-url green-text"><span class="domain-section">example.com</span>/other-page/</span>next?query-string</span></pre>
-		<pre style="font-size:14px; color:#CFCFCF"><span class="q-string"><span class="specific-url green-text"><span class="domain-section">example.com</span>/other-page/</span>next?query-string</span></pre>
+		<pre style="font-size:14px; color:#CFCFCF"><span class="q-string"><span class="specific-url green-text"><span class="domain-section">example.com</span></span>/next?query-string</span></pre>
 	</div>
 	<form>
 		<div class="pl20 pr20 pb10 pt20">

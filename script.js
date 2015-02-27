@@ -50,9 +50,34 @@ $(document).ready(function(){
 			// Hide the h1 + p then load the spinner
 			$('h1, h1 + p').addClass('animated fadeOut');
 			window.setTimeout(function (){
+				$('.content').prepend('<p class="loading-text">Loading text...</p>');
 				$('.content').prepend('<div class="spinner-wrap" style="position:absolute; top:'+hO+'px;"></div>');
 				$('.spinner-wrap').css({'opacity' : 0}).load('/modules/spinner.php').animate({'opacity' : 1}, 500);
+
 			}, 1500);
+
+			window.setTimeout(function (){
+				$('.loading-text').fadeOut(250);
+			}, 4000);
+
+			window.setTimeout(function (){
+				$('.loading-text').fadeIn(250).text('next text lol');
+			}, 4500);
+
+			window.setTimeout(function (){
+				$('.loading-text').fadeOut(250);
+			}, 7000);
+
+			window.setTimeout(function (){
+				$('.loading-text').fadeIn(250).text('evenMORE TEXT');
+			}, 7500);
+
+			window.setTimeout(function (){
+				$('.loading-text').fadeOut(250);
+			}, 10000);
+			window.setTimeout(function (){
+				$('.loading-text').fadeIn(250).text('Wowwwwwwwwwwww');
+			}, 10500);
 
 			window.setTimeout(function (){
 				var url = $('input').val();
@@ -61,7 +86,7 @@ $(document).ready(function(){
 				} else {
 					window.location.href='4_forms.php?'+url;
 				}
-			}, 5000);
+			}, 13500);
 		}
 	});
 	
